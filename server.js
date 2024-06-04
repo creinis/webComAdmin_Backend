@@ -1,3 +1,6 @@
+
+
+
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -19,7 +22,7 @@ const app = express();
 
 app.use(helmet());
 app.use(cors({
-  origin: ['https://web-com-adm-frontend.vercel.app/', 'https://web-com-admin-backend.vercel.app/', 'http://localhost:5173', 'http://localhost:5000'],
+  origin: ['https://web-com-adm-frontend.vercel.app', 'https://web-com-admin-backend.vercel.app', 'http://localhost:5173', 'http://localhost:5000'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
