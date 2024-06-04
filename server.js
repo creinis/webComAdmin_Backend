@@ -24,8 +24,8 @@ app.use(helmet());
 app.use(cors({
   origin: [
     'https://web-com-adm-frontend.vercel.app', 
-    'http://web-com-admin-backend.vercel.app', 
-    'http://web-com-admin-backend.vercel.app/api/auth/login',
+    'https://web-com-admin-backend.vercel.app', 
+    'https://web-com-admin-backend.vercel.app/api/auth/login',
     'http://localhost:5173', 
     'http://localhost:5000'
   ],
