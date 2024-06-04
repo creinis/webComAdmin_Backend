@@ -8,19 +8,19 @@ const router = Router();
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
-  console.log('Provided password:', password); // Adicionado log para depuração
+  console.log('Provided password:', password);
   
   try {
     const admin = await Admin.findOne({ email });
     if (!admin) {
-      console.log('Admin not found:', email); // Log para depuração
+      console.log('Admin not found:', email);
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    console.log('Stored hashed password:', admin.password); // Adicionado log para depuração
-    const isMatch = await admin.comparePassword(password); // Usamos o método comparePassword definido no modelo Admin
+    console.log('Stored hashed password:', admin.password);
+    const isMatch = await admin.comparePassword(password);
     if (!isMatch) {
-      console.log('Password does not match for:', email); // Log para depuração
+      console.log('Password does not match for:', email);
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
@@ -28,7 +28,7 @@ router.post('/login', async (req, res) => {
       expiresIn: '1h',
     });
 
-    console.log('Login successful for:', email); // Log para depuração
+    console.log('Login successful for:', email);
     res.json({ token });
   } catch (error) {
     console.error('Login error:', error);
@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/admin/register', async (req, res) => {
+router.post('/register', async (req, res) => { //tirei o admin da rota
   const { adminName, email, password, role } = req.body;
   try {
     let admin = await Admin.findOne({ email });

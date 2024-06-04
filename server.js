@@ -25,11 +25,10 @@ app.use(cors({
   origin: [
     'https://web-com-adm-frontend.vercel.app', 
     'https://web-com-admin-backend.vercel.app', 
-    'https://web-com-admin-backend.vercel.app/api/auth/login',
     'http://localhost:5173', 
     'http://localhost:5000'
   ],
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,AUTH',
   credentials: true,
 }));
 app.use(bodyParser.json());
