@@ -21,11 +21,11 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 const app = express();
 
 app.use(helmet());
-app.use(cors({
+app.use(cors(/* {
   origin: ['https://web-com-adm-frontend.vercel.app', 'https://web-com-admin-backend.vercel.app', 'http://localhost:5173', 'http://localhost:5000'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
-}));
+} */));
 app.use(bodyParser.json());
 
 connectDB();
