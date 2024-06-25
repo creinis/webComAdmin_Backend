@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "WebCommercial Backend",
+  "description": "WebAdmin Backend",
   "main": "server.js",
   "type": "module",
   "scripts": {
